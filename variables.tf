@@ -1,36 +1,19 @@
-variable "aws_access_key" {
-  description = "AWS access key"
-  type        = string
-  default     = ""
-}
-
-variable "aws_secret_key" {
-  description = "AWS secret key"
-  type        = string
-  default     = ""
-}
-
 variable "aws_region" {
-  description = "AWS region"
-  type        = string
+  description = "AWS region where VPC will be created"
   default     = "ap-south-1"
 }
 
-
-variable "ami" {
-   type        = string
-   description = "Ubuntu AMI ID"
-   default     = "ami-05e00961530ae1b55"
+variable "vpc_cidr_block" {
+  description = "CIDR block for the VPC"
+  default     = "10.0.0.0/16"
 }
 
-variable "instance_type" {
-   type        = string
-   description = "Instance type"
-   default     = "t2.large"
+variable "subnet_cidr_blocks" {
+  description = "CIDR blocks for subnets"
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
-variable "name_tag" {
-   type        = string
-   description = "Name of the EC2 instance"
-   default     = "kafka-server"
+variable "role_name" {
+  description = "Role name to attach"
+  type        = string
 }
