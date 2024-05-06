@@ -20,5 +20,6 @@ resource "aws_instance" "example" {
   ami           = "ami-05e00961530ae1b55"
   instance_type = "t2.large"
   subnet_id     = aws_subnet.subnets[0].id
+  associate_public_ip_address = true
   iam_instance_profile = data.aws_iam_instance_profile.existing_role.role_name
 }
