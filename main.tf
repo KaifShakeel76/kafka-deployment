@@ -24,6 +24,7 @@ resource "aws_instance" "example" {
   iam_instance_profile = data.aws_iam_instance_profile.existing_role.role_name
 
   tags = {
-    Name = "kafka"
+    Name = "kafka-server"
+    Tool = "kafka"
   }
 }
