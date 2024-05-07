@@ -1,19 +1,36 @@
+# variables.tf
+
 variable "aws_region" {
-  description = "AWS region where VPC will be created"
-  default     = "ap-south-1"
+  description = "AWS region"
+  default     = "us-west-2"  # Set your desired AWS region
 }
 
-variable "vpc_cidr_block" {
-  description = "CIDR block for the VPC"
-  default     = "10.0.0.0/16"
+variable "ec2_ami" {
+  description = "Default AMI ID for the EC2 instance"
+  default     = "ami-05e00961530ae1b55"
 }
 
-variable "subnet_cidr_blocks" {
-  description = "CIDR blocks for subnets"
-  default     = ["10.0.1.0/24", "10.0.2.0/24"]
+variable "ec2_instance_type" {
+  description = "Default instance type for the EC2 instance"
+  default     = "t2.large"
 }
 
-variable "role_name" {
-  description = "Role name to attach"
-  type        = string
+variable "ec2_key_pair" {
+  description = "Default key pair for the EC2 instance"
+  default     = "assignment-3.pem"
+}
+
+variable "default_vpc_id" {
+  description = "Default VPC ID"
+  default     = "vpc-008d2983009702a85"
+}
+
+variable "default_security_group" {
+  description = "Default security group ID"
+  default     = "sg-07d0c27f4f5b3ef97"
+}
+
+variable "instance_name" {
+  description = "Name for the EC2 instance"
+  default     = "kafka-server"
 }
