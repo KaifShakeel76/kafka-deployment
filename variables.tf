@@ -1,5 +1,3 @@
-# variables.tf
-
 variable "aws_region" {
   description = "AWS region"
   default     = "ap-south-1"
@@ -20,14 +18,9 @@ variable "ec2_key_pair" {
   default     = "assignment-3"
 }
 
-variable "default_vpc_id" {
-  description = "Default VPC ID"
-  default     = "vpc-008d2983009702a85"
-}
-
 variable "subnet_id" {
   description = "ID of the existing subnet where EC2 instance will be launched"
-  default = "subnet-0a3c117eb617cf020"
+  default     = "subnet-0a3c117eb617cf020"
 }
 
 variable "default_security_group" {
