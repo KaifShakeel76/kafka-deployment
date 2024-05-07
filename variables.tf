@@ -2,7 +2,7 @@
 
 variable "aws_region" {
   description = "AWS region"
-  default     = "us-west-2"  # Set your desired AWS region
+  default     = "ap-south-1"
 }
 
 variable "ec2_ami" {
