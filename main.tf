@@ -1,30 +1,18 @@
-terraform {
-  required_version = ">= 0.12"
-}
+# Provider Configuration
 provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr_block
-}
-
-resource "aws_subnet" "subnets" {
-  count             = length(var.subnet_cidr_blocks)
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_blocks[count.index]
-  availability_zone = "ap-south-1a"
-}
-
-resource "aws_instance" "example" {
-  ami           = "ami-05e00961530ae1b55"
-  instance_type = "t2.large"
-  subnet_id     = aws_subnet.subnets[0].id
+# EC2 Instance Resource
+resource "aws_instance" "kafka_server" {
+  ami           = var.ec2_ami
+  instance_type = var.ec2_instance_type
+  key_name      = var.ec2_key_pair
+  vpc_security_group_ids = [var.default_security_group]  # Specify the default security group ID or replace it with your desired security group
+  subnet_id     = data.aws_subnet.default.id
   associate_public_ip_address = true
-  iam_instance_profile = data.aws_iam_instance_profile.existing_role.role_name
 
   tags = {
-    Name = "kafka-server"
-    Tool = "kafka"
+    Name = var.instance_name
   }
 }
