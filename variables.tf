@@ -28,6 +28,7 @@ variable "default_vpc_id" {
 variable "subnet_id" {
   description = "ID of the existing subnet where EC2 instance will be launched"
   default = "subnet-0a3c117eb617cf020"
+}
 
 variable "default_security_group" {
   description = "Default security group ID"
