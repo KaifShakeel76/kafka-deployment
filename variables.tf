@@ -17,7 +17,7 @@ variable "ec2_instance_type" {
 
 variable "ec2_key_pair" {
   description = "Default key pair for the EC2 instance"
-  default     = "assignment-3.pem"
+  default     = "assignment-3"
 }
 
 variable "default_vpc_id" {
