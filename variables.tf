@@ -20,7 +20,7 @@ variable "ec2_key_pair" {
 
 variable "subnet_id" {
   description = "ID of the existing subnet where EC2 instance will be launched"
-  default     = "subnet-0a3c117eb617cf020"
+  default     = "subnet-078c918375d208a3a"
 }
 
 variable "default_security_group" {
