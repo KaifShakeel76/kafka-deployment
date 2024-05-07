@@ -1,4 +1,9 @@
-aws_region = "ap-south-1"
-vpc_cidr_block = "10.0.0.0/16"
-subnet_cidr_blocks = ["10.0.1.0/24", "10.0.2.0/24"]
-role_name         = "ec2_ansible"
+# terraform.tfvars
+
+aws_region            = "ap-south-1"
+ec2_ami               = "ami-05e00961530ae1b55"
+ec2_instance_type     = "t2.large"
+ec2_key_pair          = "assignment-3.pem"
+default_vpc_id        = "vpc-008d2983009702a85"
+default_security_group = "sg-07d0c27f4f5b3ef97"
+instance_name         = "kafka-server"
